@@ -15,7 +15,6 @@
 # print every epoch
 # i know that the weight is supposed to change by looking at the errors but we'll think that through
 
-
 import random as rd
 import time
 
@@ -27,9 +26,11 @@ def neuron(start,stop):
         print("The weight of this relationship b/w x and y is %f" % weight)
         return weight,error
     else:
-        print("epoch no. %d, error = %f" % (i,error))
+        print("epoch no. %d,weight = %d error = %f" % (i,weight,error))
         time.sleep(0.1)
-        return error
+        wts.append(weight)
+        errs.append(error)
+        return error,weight
     
 print("Welcome to Jatin's own local TensorFlow made in his basement, we will attempt to approximate a function based off the relationship b/w x and y of your entries \n and might as well predict y or x with an x or y of your choice")
 for j in range(3):
@@ -39,7 +40,12 @@ y = int(input("Enter y: "))
 x = int(input("Enter x: "))
 w = y/x
 w1 = rd.randrange(1,1000)
-weight = 0
+global wts
+wts = []
+global errs
+errs = []
+global weight
+global error
 global i
 i = 0
 error = (w*x - w1*x)
@@ -74,9 +80,10 @@ if not (-0.1 <= error <= 0.1):
             start= 1
             stop = 100
         else:
-            continue
+            continue #write something here to use the closest error to find more around that range recorded
 else:
-    print("The weight of this relationship b/w x and y is %f" % weight)
+    print("The weight of this relationship b/w x and y is %f" % w1)
+    weight = w1
     
 predict_y = int(input("Enter your x to predict the y according to the relationship we built"))
 for j in range(2):
