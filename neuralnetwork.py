@@ -39,7 +39,6 @@ y = int(input("Enter y: "))
 x = int(input("Enter x: "))
 w = y/x
 w1 = rd.randrange(1,1000)
-global error
 weight = 0
 global i
 i = 0
