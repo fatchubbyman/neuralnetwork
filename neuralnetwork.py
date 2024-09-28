@@ -38,40 +38,40 @@ for j in range(3):
 y = int(input("Enter y: "))
 x = int(input("Enter x: "))
 w = y/x
-w1 = rd.range(1000000,1)
+w1 = rd.randrange(1,1000)
 global i
 i = 0
 error = (w*x - w1*x)
 if not (-0.1 <= error <= 0.1):
-    start = 10000
-    stop = 900
+    start = 900
+    stop = 1000
     while not (-0.1 <= error <= 0.1):
         i += 1
         neuron(start,stop)
         if 20 > i >= 10:                    #range of the randrange will change every 10 epochs
-            start= 800
-            stop = 700
-        elif 30 > i >= 20:
             start= 700
-            stop = 600
-        elif 40 > i >= 30:
+            stop = 800
+        elif 30 > i >= 20:
             start= 600
-            stop = 500
+            stop = 700
+        elif 40 > i >= 30:
+            start= 500
+            stop = 600
         elif 50 > i >= 40:
-            start = 500
-            stop = 400
+            start = 400
+            stop = 500
         elif 60 > i >= 20:
-            start= 400
-            stop = 300
-        elif 70 > i >= 30:
             start= 300
-            stop = 200
-        elif 80 > i >= 20:
+            stop = 400
+        elif 70 > i >= 30:
             start= 200
-            stop = 100
-        elif 90 > i >= 30:
+            stop = 300
+        elif 80 > i >= 20:
             start= 100
-            stop = 1
+            stop = 200
+        elif 90 > i >= 30:
+            start= 1
+            stop = 100
         else:
             continue
 else:
