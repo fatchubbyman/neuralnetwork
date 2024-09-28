@@ -13,9 +13,9 @@
 # we could use while loops to get closer and closer to the right weights as it goes on for infinite amounts of time?
 # our while loop stops when we hit a certain threshold of error
 # print every epoch
+# i know that the weight is supposed to change by looking at the errors but we'll think that through
 
 
-import numpy as np
 import random as rd
 import time
 
@@ -32,6 +32,9 @@ def neuron(start,stop):
         return error
     
 print("Welcome to Jatin's own local TensorFlow made in his basement, we will attempt to approximate a function based off the relationship b/w x and y of your entries and might as well predict y or x with an x or y of your choice")
+for j in range(3):
+    print(".")
+    time.sleep(0.5)
 y = int(input("Enter y: "))
 x = int(input("Enter x: "))
 w = y/x
@@ -45,30 +48,32 @@ if not (-0.1 <= error <= 0.1):
     while not (-0.1 <= error <= 0.1):
         i += 1
         neuron(start,stop)
-        if 20 >= i >= 10:                    #range of the randrange will change every 10 epochs
+        if 20 > i >= 10:                    #range of the randrange will change every 10 epochs
             start= 800
             stop = 700
-        elif 30 >= i >= 20:
+        elif 30 > i >= 20:
             start= 700
             stop = 600
-        elif 40 >= i >= 30:
+        elif 40 > i >= 30:
             start= 600
             stop = 500
-        elif 50 >= i >= 40:
+        elif 50 > i >= 40:
             start = 500
             stop = 400
-        elif 60 >= i >= 20:
+        elif 60 > i >= 20:
             start= 400
             stop = 300
-        elif 70 >= i >= 30:
+        elif 70 > i >= 30:
             start= 300
             stop = 200
-        elif 80 >= i >= 20:
+        elif 80 > i >= 20:
             start= 200
             stop = 100
-        elif 90 >= i >= 30:
+        elif 90 > i >= 30:
             start= 100
             stop = 1
+        else:
+            continue
 else:
     print("The weight of this relationship b/w x and y is %f" % w1)
     
