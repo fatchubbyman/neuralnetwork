@@ -28,7 +28,7 @@ def neuron(start,stop):
         return weight
     else:
         print("epoch no. %d, error = %f" % (i,error))
-        time.sleep(1)
+        time.sleep(0.1)
         return error
     
 print("Welcome to Jatin's own local TensorFlow made in his basement, we will attempt to approximate a function based off the relationship b/w x and y of your entries and might as well predict y or x with an x or y of your choice")
@@ -60,22 +60,29 @@ if not (-0.1 <= error <= 0.1):
         elif 50 > i >= 40:
             start = 400
             stop = 500
-        elif 60 > i >= 20:
+        elif 60 > i >= 50:
             start= 300
             stop = 400
-        elif 70 > i >= 30:
+        elif 70 > i >= 60:
             start= 200
             stop = 300
-        elif 80 > i >= 20:
+        elif 80 > i >= 70:
             start= 100
             stop = 200
-        elif 90 > i >= 30:
+        elif 90 > i >= 80:
             start= 1
             stop = 100
         else:
             continue
 else:
     print("The weight of this relationship b/w x and y is %f" % w1)
+    
+predict_y = int(input("Enter your x to predict the y according to the relationship we built"))
+for j in range(2):
+    print(".")
+    time.sleep(0.5)
+print(w1*predict_y)
+
     
 
 
