@@ -25,13 +25,13 @@ def neuron(start,stop):
     error = (w*x - weight*x)
     if (error >= -0.1) and (error <= 0.1):
         print("The weight of this relationship b/w x and y is %f" % weight)
-        return weight
+        return weight,error
     else:
         print("epoch no. %d, error = %f" % (i,error))
         time.sleep(0.1)
         return error
     
-print("Welcome to Jatin's own local TensorFlow made in his basement, we will attempt to approximate a function based off the relationship b/w x and y of your entries and might as well predict y or x with an x or y of your choice")
+print("Welcome to Jatin's own local TensorFlow made in his basement, we will attempt to approximate a function based off the relationship b/w x and y of your entries \n and might as well predict y or x with an x or y of your choice")
 for j in range(3):
     print(".")
     time.sleep(0.5)
@@ -39,6 +39,8 @@ y = int(input("Enter y: "))
 x = int(input("Enter x: "))
 w = y/x
 w1 = rd.randrange(1,1000)
+global error
+weight = 0
 global i
 i = 0
 error = (w*x - w1*x)
@@ -75,13 +77,13 @@ if not (-0.1 <= error <= 0.1):
         else:
             continue
 else:
-    print("The weight of this relationship b/w x and y is %f" % w1)
+    print("The weight of this relationship b/w x and y is %f" % weight)
     
 predict_y = int(input("Enter your x to predict the y according to the relationship we built"))
 for j in range(2):
     print(".")
     time.sleep(0.5)
-print(w1*predict_y)
+print(weight*predict_y)
 
     
 
