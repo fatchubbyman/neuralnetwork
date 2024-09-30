@@ -48,6 +48,7 @@ global weight
 global error
 global i
 i = 0
+j = 0
 error = (w*x - w1*x)
 if not (-0.1 <= error <= 0.1):
     start = 900
@@ -79,8 +80,12 @@ if not (-0.1 <= error <= 0.1):
         elif 90 > i >= 80:
             start= 1
             stop = 100
-        else:
-            continue #write something here to use the closest error to find more around that range recorded
+            # when the fuck does this loop stop
+        #elif i > 90:
+            #while int(min(errs)) != int(errs[j]):
+                #j += 1
+            #start = wts[j] - 5
+            #stop = wts[j] + 5
 else:
     print("The weight of this relationship b/w x and y is %f" % w1)
     weight = w1
