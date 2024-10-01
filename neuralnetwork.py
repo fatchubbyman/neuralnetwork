@@ -80,12 +80,9 @@ if not (-0.1 <= error <= 0.1):
         elif 90 > i >= 80:
             start= 1
             stop = 100
-            # when the fuck does this loop stop
-        #elif i > 90:
-            #while int(min(errs)) != int(errs[j]):
-                #j += 1
-            #start = wts[j] - 5
-            #stop = wts[j] + 5
+        elif i < 90:
+            start = int(min(errs)) - 5
+            stop = int(min(errs)) + 5
 else:
     print("The weight of this relationship b/w x and y is %f" % w1)
     weight = w1
