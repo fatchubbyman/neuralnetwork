@@ -55,7 +55,7 @@ if not (-0.1 <= error <= 0.1):
     stop = 1000
     while not (-0.1 <= error <= 0.1):
         i += 1
-        neuron(start,stop)
+        weight, error = neuron(start, stop)
         if 20 > i >= 10:                    #range of the randrange will change every 10 epochs
             start= 700
             stop = 800
