@@ -32,7 +32,7 @@ def neuron(start,stop):
         errs.append(error)
         return error,weight
     
-print("Welcome to Jatin's own local TensorFlow made in his basement, we will attempt to approximate a function based off the relationship b/w x and y of your entries \n and might as well predict y or x with an x or y of your choice")
+print("we will attempt to approximate a function based off the relationship b/w x and y of your entries \n and might as well predict y or x with an x or y of your choice")
 for j in range(3):
     print(".")
     time.sleep(0.5)
